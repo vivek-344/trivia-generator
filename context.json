@@ -1,0 +1,351 @@
+[
+  {
+    "topic": "Golang",
+    "tags": [
+      "error handling",
+      "errors",
+      "go"
+    ],
+    "question": "What is the idiomatic way to handle errors in Go?",
+    "options": [
+      "Using exceptions",
+      "Ignoring errors",
+      "Checking for errors explicitly using the `if err != nil` pattern",
+      "Using a centralized error handling mechanism"
+    ],
+    "correct_answer": "Checking for errors explicitly using the `if err != nil` pattern",
+    "explanation": "Go's error handling relies on explicitly checking for errors after every function call that might return an error. This is done using the `if err != nil` pattern.",
+    "difficulty_level": 6,
+    "hints": [
+      "Consider how Go differs from languages that use exceptions.",
+      "Think about how to design robust code that handles potential errors gracefully.",
+      "This method is central to Go's philosophy on error handling"
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "concurrency",
+      "goroutines",
+      "go"
+    ],
+    "question": "Which keyword is used to start a new goroutine in Go?",
+    "options": [
+      "thread",
+      "process",
+      "go",
+      "async"
+    ],
+    "correct_answer": "go",
+    "explanation": "The `go` keyword is used as a prefix to a function call to start a new goroutine.  This allows concurrent execution of functions.",
+    "difficulty_level": 5,
+    "hints": [
+      "This keyword is specific to Go's concurrency model.",
+      "It's a fundamental part of writing concurrent programs in Go.",
+      "It allows for lightweight concurrency"
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "methods",
+      "receivers",
+      "go"
+    ],
+    "question": "What is the purpose of the receiver in a Go method?",
+    "options": [
+      "It specifies the return type of the method.",
+      "It's an optional parameter that can be passed to the method.",
+      "It specifies the type on which the method operates.",
+      "It's used for error handling within the method."
+    ],
+    "correct_answer": "It specifies the type on which the method operates.",
+    "explanation": "The receiver in a Go method acts as an implicit first argument to the method. It defines the type that the method is associated with, enabling methods to act on instances of that type.",
+    "difficulty_level": 6,
+    "hints": [
+      "Think about how methods are associated with specific types.",
+      "Consider the syntax of methods in Go, including the receiver definition.",
+      "It determines the context in which the method runs"
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "packages",
+      "imports",
+      "go"
+    ],
+    "question": "How are external packages included in a Go program?",
+    "options": [
+      "Using the `using` keyword",
+      "By copying the package files into the project",
+      "Using the `import` keyword",
+      "They are automatically included"
+    ],
+    "correct_answer": "Using the `import` keyword",
+    "explanation": "Go uses the `import` keyword followed by the package path in parentheses to include external packages into a program.",
+    "difficulty_level": 4,
+    "hints": [
+      "This keyword is essential for managing dependencies in Go.",
+      "It facilitates modularity and code reuse.",
+      "It's a key part of Go's build system"
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "defer",
+      "cleanup",
+      "go"
+    ],
+    "question": "What is the primary purpose of the `defer` keyword in Go?",
+    "options": [
+      "To delay execution of a function until the end of the current function.",
+      "To execute a function concurrently.",
+      "To define a function's return value.",
+      "To handle errors in a function."
+    ],
+    "correct_answer": "To delay execution of a function until the end of the current function.",
+    "explanation": "The `defer` keyword schedules a function call to be executed after the current function returns, regardless of whether it returns normally or due to a panic. This is typically used for cleanup tasks.",
+    "difficulty_level": 5,
+    "hints": [
+      "Consider its use in resource management such as closing files or network connections.",
+      "It ensures functions run even if an error occurs.",
+      "It's useful for ensuring proper cleanup in various scenarios"
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "data structures",
+      "maps",
+      "go"
+    ],
+    "question": "What is the best way to check if a key exists in a Go map before accessing its value?",
+    "options": [
+      "Use a conditional statement and check if the value is nil after accessing the key",
+      "Use the built-in `len()` function to check the map's size",
+      "Use a loop to iterate through the map and check each key",
+      "Use the comma ok idiom: `value, ok := myMap[\"key\"]`"
+    ],
+    "correct_answer": "Use the comma ok idiom: `value, ok := myMap[\"key\"]`",
+    "explanation": "The comma ok idiom provides an efficient and idiomatic way to check if a key exists in a Go map. It returns the value associated with the key and a boolean value indicating whether the key exists.",
+    "difficulty_level": 6,
+    "hints": [
+      "Go's map access has a specific way of handling missing keys.",
+      "Look for a concise technique that doesn't require iteration.",
+      "The boolean value returned is crucial for handling the case where the key does not exist."
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "concurrency",
+      "channels",
+      "go"
+    ],
+    "question": "In Go, what is the purpose of a buffered channel?",
+    "options": [
+      "To prevent deadlocks by allowing data to be sent even if no receiver is available",
+      "To guarantee that all data is sent and received in order",
+      "To increase the speed of communication between goroutines",
+      "To limit the number of goroutines that can access a channel"
+    ],
+    "correct_answer": "To prevent deadlocks by allowing data to be sent even if no receiver is available",
+    "explanation": "A buffered channel can store a certain number of elements even without a receiver being present. This prevents sending goroutines from blocking when the channel is full, reducing the risk of deadlocks.",
+    "difficulty_level": 7,
+    "hints": [
+      "Consider scenarios where sending and receiving speeds might differ.",
+      "Think about how it impacts goroutine synchronization.",
+      "Deadlock is a common problem in concurrent programs."
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "interfaces",
+      "polymorphism",
+      "go"
+    ],
+    "question": "What is the key characteristic that defines an interface in Go?",
+    "options": [
+      "It specifies the data that a type can hold",
+      "It defines a set of methods that a type must implement",
+      "It determines the size and layout of a type in memory",
+      "It is a specific type of data structure"
+    ],
+    "correct_answer": "It defines a set of methods that a type must implement",
+    "explanation": "Go interfaces define a set of methods. Any type that implements these methods implicitly satisfies the interface, enabling polymorphism.",
+    "difficulty_level": 5,
+    "hints": [
+      "Think about how interfaces promote code reusability.",
+      "Consider the relationship between interfaces and types.",
+      "It's a key concept in Go's object-oriented features."
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "testing",
+      "unit testing",
+      "go"
+    ],
+    "question": "Which testing framework is most commonly used for unit testing in Go?",
+    "options": [
+      "pytest",
+      "unittest",
+      "testing",
+      "mocha"
+    ],
+    "correct_answer": "testing",
+    "explanation": "Go's built-in `testing` package provides a simple and comprehensive framework for writing unit tests.",
+    "difficulty_level": 4,
+    "hints": [
+      "This is a standard library package in Go.",
+      "It integrates seamlessly with the `go test` command.",
+      "Look at the standard library for testing support."
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "context",
+      "cancellation",
+      "go"
+    ],
+    "question": "What is the main purpose of the `context` package in Go?",
+    "options": [
+      "To provide a mechanism for logging errors in a concurrent program",
+      "To manage the lifecycle of goroutines and handle cancellations gracefully",
+      "To synchronize access to shared resources between goroutines",
+      "To manage the timing and scheduling of goroutines"
+    ],
+    "correct_answer": "To manage the lifecycle of goroutines and handle cancellations gracefully",
+    "explanation": "Go's `context` package provides a way to create contexts that carry deadlines, cancellation signals, and other request-scoped values across API boundaries and between goroutines.",
+    "difficulty_level": 6,
+    "hints": [
+      "Consider scenarios where goroutines need to be stopped early.",
+      "Think about the importance of managing resources in concurrent programs.",
+      "This package helps with managing goroutine life cycle."
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "methods",
+      "interfaces",
+      "polymorphism",
+      "go"
+    ],
+    "question": "Explain the concept of embedding in Go interfaces and provide a practical example.",
+    "options": [
+      "Embedding allows combining multiple interfaces into one, inheriting all their methods. Example: type MyInterface interface { AInterface; BInterface }",
+      "Embedding doesn't exist in Go interfaces; it's only applicable to structs. ",
+      "Embedding in interfaces means implementing all methods individually. Example: type MyInterface interface { MethodA(); MethodB()}",
+      "Embedding is a way to pass interfaces as parameters.  Example: func MyFunc(i interface{})"
+    ],
+    "correct_answer": "Embedding allows combining multiple interfaces into one, inheriting all their methods. Example: type MyInterface interface { AInterface; BInterface }",
+    "explanation": "Embedding in Go interfaces allows creating an interface that inherits all methods from one or more other interfaces. This simplifies interface design and promotes code reuse.",
+    "difficulty_level": 6,
+    "hints": [
+      "Think about how to create an interface that combines functionality from other interfaces without explicitly redefining all methods.",
+      "Consider the benefits of code reuse and avoiding redundancy in interface definitions.",
+      "Focus on how you can combine the functionality of existing interfaces without repetition"
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "concurrency",
+      "channels",
+      "synchronization",
+      "go"
+    ],
+    "question": "Describe the difference between buffered and unbuffered channels in Go and their use cases.",
+    "options": [
+      "Buffered channels block until a sender and receiver are available; unbuffered channels don't block, allowing faster communication.",
+      "Unbuffered channels allow sending data only when a receiver is immediately ready; buffered channels store a fixed amount of data before blocking.",
+      "Buffered and unbuffered channels function identically, only their naming differs.",
+      "Buffered channels always result in deadlocks; unbuffered channels prevent deadlocks."
+    ],
+    "correct_answer": "Unbuffered channels allow sending data only when a receiver is immediately ready; buffered channels store a fixed amount of data before blocking.",
+    "explanation": "Unbuffered channels provide synchronous communication, requiring a receiver to be ready before sending. Buffered channels allow sending data up to the buffer's capacity even if no receiver is immediately available.",
+    "difficulty_level": 6,
+    "hints": [
+      "Consider scenarios where the sending and receiving of data may happen at different rates.",
+      "Think about how buffering impacts the behavior of concurrent goroutines.",
+      "Deadlocks can often occur in concurrent systems and how channels help to avoid this"
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "error handling",
+      "best practices",
+      "go"
+    ],
+    "question": "What are the best practices for handling errors in Go, and why are they important?",
+    "options": [
+      "Ignore errors whenever possible for better performance.",
+      "Use exceptions to handle errors, similar to Java or Python.",
+      "Check errors explicitly, handle them gracefully, and avoid unnecessary error wrapping.",
+      "Use a central error-handling mechanism to log all errors centrally, regardless of context."
+    ],
+    "correct_answer": "Check errors explicitly, handle them gracefully, and avoid unnecessary error wrapping.",
+    "explanation": "Go's philosophy emphasizes explicit error handling. Checking errors and responding appropriately is crucial for creating robust and reliable programs.",
+    "difficulty_level": 5,
+    "hints": [
+      "Consider how to prevent unexpected program crashes due to unhandled errors.",
+      "Think about how to communicate error information effectively to users or other parts of the application.",
+      "Go's approach to error handling differs significantly from other languages."
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "concurrency",
+      "goroutines",
+      "sync",
+      "go"
+    ],
+    "question": "Explain the concept of race conditions in concurrent Go programs and how to prevent them.",
+    "options": [
+      "Race conditions occur when multiple goroutines access shared resources simultaneously without proper synchronization, leading to unpredictable behavior.",
+      "Race conditions are inevitable in concurrent programs and cannot be prevented.",
+      "Race conditions are only relevant when using channels; other concurrent constructs are immune.",
+      "Race conditions only occur in programs with more than 10 goroutines."
+    ],
+    "correct_answer": "Race conditions occur when multiple goroutines access shared resources simultaneously without proper synchronization, leading to unpredictable behavior.",
+    "explanation": "Race conditions arise when multiple goroutines modify shared data concurrently without proper synchronization mechanisms, such as mutexes or channels.",
+    "difficulty_level": 7,
+    "hints": [
+      "Consider scenarios where multiple goroutines might write to the same variable concurrently.",
+      "Think about synchronization mechanisms that can prevent concurrent access to shared resources.",
+      "Tools like `go race` can help detect race conditions during development."
+    ]
+  },
+  {
+    "topic": "Golang",
+    "tags": [
+      "testing",
+      "unit testing",
+      "go test",
+      "go"
+    ],
+    "question": "Describe how to write and run unit tests in Go using the built-in testing package.",
+    "options": [
+      "Go doesn't have a built-in testing package; you need to use a third-party library.",
+      "Create a file named 'your_test.go', write test functions that start with 'Test...', and run them using 'go run your_test.go'.",
+      "Create a file named 'your_test.go' in the same directory as your source code, write test functions that start with 'Test...', and run them using 'go test'.",
+      "Use a separate testing framework like JUnit to write and run tests for Go code."
+    ],
+    "correct_answer": "Create a file named 'your_test.go' in the same directory as your source code, write test functions that start with 'Test...', and run them using 'go test'.",
+    "explanation": "Go's testing package provides a simple way to write and execute unit tests. Tests are placed in files with names ending in '_test.go' and functions starting with 'Test...' are automatically executed when running `go test`.",
+    "difficulty_level": 5,
+    "hints": [
+      "Consider the naming conventions for test files and functions.",
+      "The `go test` command is central to running the unit tests.",
+      "Remember the specific naming conventions for test files and test functions"
+    ]
+  }
+]
